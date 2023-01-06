@@ -23,10 +23,6 @@ class DataBase():
     def add_user(self, info):
         self.cursor.execute('INSERT INTO users VALUES (?, ?);', info)
         self.conn.commit()
-    
-    def find_id(self):
-        self.cursor.execute('SELECT id FROM users')
-        return self.cursor.fetchall()
 
 def get_user_info(id):
     url_info_user = f'https://api.vk.com/method/users.get?user_ids={id}&name_case=dat&access_token={token}&v=5.131'
