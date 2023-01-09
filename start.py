@@ -24,6 +24,7 @@ class DataBase():
         self.cursor.execute('INSERT INTO users VALUES (?, ?);', info)
         self.conn.commit()
 
+
 def get_user_info(id):
     url_info_user = f'https://api.vk.com/method/users.get?user_ids={id}&name_case=dat&access_token={token}&v=5.131'
     request = requests.get(url_info_user).json()
